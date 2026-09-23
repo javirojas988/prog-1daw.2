@@ -36,11 +36,14 @@ public class Ejercicio1 {
         int a = 0 ;
         System.out.printf("\n|   lunes  |  martes  | miercoles|  jueves  |  viernes |\n");
         System.out.printf("========================================================\n");
-        String asignaturas[] = {"nada" , "nada" , "nada", bdd ,"nada", prog , "nada" , prog,bdd,"nada",prog , ipe2 , prog,"nada","nada",prog , ipe2 , prog,"nada","nada","nada" , bdd , prog,"nada",prog,"nada" , bdd , bdd,ipe2,prog,"nada" , "nada" , bdd,ipe2,prog};
+        String asignaturas[] = {};
         while ( i <= 7) {
-            //meter fila recreo 
-            System.out.printf("|   %s   |   %s   |   %s   |   %s   |   %s   |\n", asignaturas[a], a++, asignaturas[a], a++, asignaturas[a],a++, asignaturas[a],a++, asignaturas[a] );
-            
+            if ( i == 4){
+                System.out.printf("|------------------------------------------------------|\n");
+            } else {    
+                System.out.printf("|   %s   |   %s   |   %s   |   %s   |   %s   |\n", asignaturas[a++], asignaturas[a++], asignaturas[a++], asignaturas[a++], asignaturas[a++] );
+            }
+            i++;
         }
     }
 
