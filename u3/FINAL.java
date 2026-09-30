@@ -1,0 +1,6 @@
+/**
+ * FINAL
+ */
+public class FINAL {
+
+}

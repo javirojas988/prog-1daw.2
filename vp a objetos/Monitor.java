@@ -2,6 +2,7 @@ public class Monitor {
     public double peso ; 
     public double tamanio;
     public boolean isOn;
+    
     // public String color ; 
     // public String marca; 
 
