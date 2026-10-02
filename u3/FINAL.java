@@ -1,6 +1,0 @@
-/**
- * FINAL
- */
-public class FINAL {
-
-}
