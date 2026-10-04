@@ -5,13 +5,16 @@ public class Perro extends Animal {
         super(familia, nombre);
     }
 
-    public void hazSonido(){
-        System.out.println("guau guau");
-    }
+    
 
     @Override
     public String toString() {
         // TODO Auto-generated method stub
         return "soy pero";
+    }
+
+    @Override 
+    public void hazSonido(){
+        System.out.println("guau");
     }
 }
