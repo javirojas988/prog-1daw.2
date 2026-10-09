@@ -15,7 +15,8 @@ public class Ej7 {
         base = sc.nextInt();
         System.out.print("potencia: ");
         potencia = sc.nextInt();
-        resultado= base ; 
+        resultado= base ;
+         
         for ( int i = 1  ; i < potencia ; i++){
             
             resultado *= base ;

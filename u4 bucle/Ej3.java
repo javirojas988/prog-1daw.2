@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+ 
 public class Ej3 {
     public static void main(String[] args) {
         System.out.println("HAY UNA CAJA FUERTE , TIENES 4 INTENTOS y 4 digitos");
@@ -16,6 +16,7 @@ public class Ej3 {
         //         System.out.println("El papu ha hacertado");
         //     }
         // }
+
         while (index != 4 && contrasenia != respuesta ) {
             
             System.out.print((index+1)+" intento: ");
