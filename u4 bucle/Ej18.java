@@ -2,19 +2,18 @@ public class Ej18 {
     public static void main(String[] args) {
         //piramide
         int altura = 5 ;
-        int d = 1 ; 
+        int numPint = 1 ; 
+        String simbolo = "W";
+
         for ( int i = 0 ; i < altura ; i ++){
             for ( int j = 0 ; j < altura-i; j++){
                 System.out.print(" ");
             }
-            for ( int y = 0 ; y < d ; y++ ){
-            System.out.print("*");
+            for ( int y = 0 ; y < numPint ; y++ ){
+                System.out.print(simbolo);
             }
-            d += 2;
+            numPint += 2;
             System.out.println();
-        }
-
-        
-                            
+        }                    
     }
 }
