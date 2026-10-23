@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 
 public class App {
+
     // metodo de lectura libre de errores
     public static int lecturaSegura(String frase){
         int entrada1 = 0 ; 
@@ -32,7 +33,7 @@ public class App {
         return entrada1 ; 
     }
 
-
+    //nmain
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         boolean repetir = true;
@@ -43,8 +44,6 @@ public class App {
 
         System.out.println("Bienvenido");
 
-       
-            
         do {
             
             System.out.println("---------------------------------\nElija una opción \n1.Crear nuevo ticket\n2.Imprimir resumen de ventas\n3.Salir");

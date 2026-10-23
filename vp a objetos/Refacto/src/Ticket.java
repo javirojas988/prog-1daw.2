@@ -3,7 +3,7 @@ public class Ticket {
     private int entradasNinio ; 
     private int audioguias    ;
      
-    private final double PRECIOADULTO    = 9.60 ;
+    private final double PRECIOADULTO    = 9.60 ; // si le ponemos static mejor
     private final double PRECIONINIO     = 4.95 ; 
     private final double PRECIOaUDIOGUIA = 3.50 ;
     private final double DESCUENTO = 0.17 ; 
