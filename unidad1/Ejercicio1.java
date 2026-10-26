@@ -19,7 +19,15 @@ public class Ejercicio1 {
         String bdd = "\033[32mbdds\033[0m";
         String ipe2 = "\033[33mipe2\033[0m";
         
-        System.out.printf("\n|   lunes  |  martes  | miercoles|  jueves  |  viernes |\n");
+        //
+        String lunes = "lunes";
+        String martes = "martes";
+        String miercoles = "miercoels";
+        String jueves = "jueves";
+        String viernes= "viernes"; 
+        //
+        
+        System.out.printf("\n|%10s|%10s|%10s|%10s|%10s|\n", lunes, martes, miercoles, jueves, viernes );
         System.out.printf("========================================================\n");
 
         System.out.printf("|   %s   |   %s   |   %s   |   %s   |   %s   |\n", "nada" , "nada" , "nada",bdd,"nada");
