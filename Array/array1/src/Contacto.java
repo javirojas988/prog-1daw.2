@@ -18,6 +18,6 @@ public class Contacto {
     }
     @Override
     public String toString() {
-        return (nombre + " " + ape1 + " " + ape2 + "\nTelf: " + tlf + "\n@: " + gmail);
+        return ("nombre: " + nombre + " " + ape1 + " " + ape2 + "\nTelf: " + tlf + "\n@: " + gmail);
     }
 }

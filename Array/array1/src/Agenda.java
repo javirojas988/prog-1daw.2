@@ -7,6 +7,7 @@ public class Agenda {
         for (int i = 0; i < listaContactos.length; i++) {
             if (listaContactos[i] != null && contacto.getTlf() == listaContactos[i].getTlf()){
                 respuesta = false;
+                System.out.println("Error, ese tlf ya esta registrado. ");
             } 
         }
         return respuesta;  
@@ -16,7 +17,10 @@ public class Agenda {
     public boolean sePuedeAniadir(){
         if (Main.contactosAniadidos != 20 ){
             return  true;
-        }else return  false;
+        }else{
+            System.out.println("Ya esta el máximo de personas ");
+            return  false;
+        } 
     }
 
     // controlando que no haya ya uno creado 
@@ -39,15 +43,21 @@ public class Agenda {
     public void imprimirAgenda(){
         for (int i = 0; i < listaContactos.length; i++) {
             if ( listaContactos[i]!= null ){
-                System.out.print((i+1) + "\n-------------------------\n");
-                listaContactos[i].toString();
+                System.out.print("Id "+(i+1)+": \n" + listaContactos[i].toString()+"\n-------------------------\n");
+                
             }
         }
     }
 
     public void eliminarContacto(int opcion){
-        listaContactos[opcion-1] = null;
-        Main.contactosAniadidos -- ;
+        if ( listaContactos[opcion-1] == null){
+            System.out.println("Ese contacto no existe");
+        } else {
+            System.out.println("Borrado con exito");
+            listaContactos[opcion-1] = null;
+            Main.contactosAniadidos -- ;
+        }
+        
     }
 
     public void limpiarAgenda(){
