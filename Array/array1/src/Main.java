@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //==========================
-//No va por el sc
+//No va por el esaner
 //==========================
 
 public class Main {
