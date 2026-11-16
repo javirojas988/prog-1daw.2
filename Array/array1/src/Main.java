@@ -76,7 +76,10 @@ public class Main {
                     System.out.println("Limpiada con exito");
                     break;
                 case 5:
-                    // metodo buscar
+                    sc.nextLine();
+                    System.out.print("introduce un apedillo: ");
+                    String ape = sc.nextLine() ;
+                    agenda1.buscar(ape);
                     break;
                 case 6:
                     repetir = false ; 

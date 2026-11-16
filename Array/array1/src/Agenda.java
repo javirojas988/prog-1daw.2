@@ -65,5 +65,17 @@ public class Agenda {
             listaContactos[i]=null;
         }
     }
+
+    public void buscar(String apedillo){
+        boolean auxiliar = false ; 
+        for (int i = 0; i < listaContactos.length; i++) {
+
+            if ( apedillo.equals(listaContactos[i])){
+                auxiliar = true ; 
+                System.out.println(listaContactos[i].toString());
+            }
+        }
+        if( auxiliar == false) System.out.println("No existe nadie que se apellide asi ");
+    }
     
 }
