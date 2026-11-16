@@ -48,6 +48,8 @@ public class Main {
             System.out.println("-----------------\n1. Añadir\n2. Imprimir\n3. Eliminar\n4. Limpiar\n5. Buscar\n6. Salir");
             switch (lecturaSegura("Elija una opción: ")) {
                 case 1:
+                    // el buffer coje el salto y se come el next int o algo, asi que hay q poner sc.nextLine
+                    sc.nextLine();
                     System.out.println("----------");
                     System.out.print("Nombre: ");
                     String nombre = sc.nextLine();
@@ -56,12 +58,14 @@ public class Main {
                     System.out.print("Segundo Apellido: ");
                     String apellido2 = sc.nextLine();
                     int telefono = lecturaSegura("Introduce el telefono: ");
+                    sc.nextLine();
                     System.out.print("Introduce tu gmail: ");
                     String email = sc.nextLine();
                     Contacto contacto1 = new Contacto(nombre, apellido1, apellido2, telefono, email);
                     agenda1.anadirContacto(contacto1);
                     break;
                 case 2:
+                    System.out.println("-----------------------------");
                     agenda1.imprimirAgenda();
                     break;
                 case 3:

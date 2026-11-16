@@ -2,5 +2,6 @@ Random rand = new Random();
 int enteroAleatorio = rand.nextInt(15); // Entre 0 y 14 incluidos
 double realAleatorio = rand.nextDouble(); // Entre 0 y 1
 boolean booleanoAleatorio = rand.nextBoolean();
+rand.nextInt(max - min + 1) + min;
 
 
