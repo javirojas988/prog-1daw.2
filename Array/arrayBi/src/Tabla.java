@@ -41,10 +41,10 @@ public class Tabla {
 
     public void mediaMes(int mes){
         int media = 0  ; 
-        for (int i = 0; i < DIAS_MES[mes+1]; i++) {
-            media += tablaAnio[mes+1][i] ;
+        for (int i = 0; i < DIAS_MES[mes-1]; i++) {
+            media += tablaAnio[mes-1][i] ;
         }
-        media /= DIAS_MES[mes+1];
+        media /= DIAS_MES[mes-1];
         System.out.println("La media de ese mes fue de: "+media);
     }
 
@@ -76,10 +76,50 @@ public class Tabla {
 
             for (int j = 0; j < MAX_DIAS; j++) {
                 if(tablaAnio[i][j] >= 30){
-                    System.out.printf("El %d de %s\n",j ,NOM_MESES[i]);
+                    System.out.printf("El %d de %s\n",j+1 ,NOM_MESES[i]);
                 }
                 
             }
         }
+    }
+
+    public void comparar(){
+        //media 6, 7, 8 vs 12, 1 ,2
+        int mediaVerano = 0  ; 
+        
+        int divisor ;
+        int mesInvierno = 12;
+        int mediaInvierno = 0 ; 
+
+        divisor = 0 ;
+        // media verano
+        for (int j = 0; j <= 3; j++) {
+            int k = 6 ;  
+            for (int i = 0; i < DIAS_MES[k-1]; i++) {
+                mediaVerano += tablaAnio[k-1][i] ;
+                
+            }
+            divisor += DIAS_MES[k-1];
+            k++;
+            
+        }
+        mediaVerano /= divisor;
+
+        divisor = 0 ; 
+        // media invierno 
+        for (int j = 0; j < 3; j++) {
+            int k = 12 ;
+            if ( j == 1 )k = 1 ; 
+            if ( j == 2 )k = 2 ; 
+
+            for (int i = 0; i < DIAS_MES[k-1]; i++) {
+                mediaInvierno += tablaAnio[k-1][i] ;
+            
+            }
+            
+            divisor += DIAS_MES[k-1];
+        }
+        mediaInvierno /= divisor; 
+        System.out.printf("media de invierno %d vs media de verano %d\n",mediaInvierno,mediaVerano);
     }
 }

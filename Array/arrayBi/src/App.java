@@ -65,7 +65,7 @@ public class App {
                     ta1.calorExtremo();
                     break;
                 case 5:
-                    //media 6, 7, 8 vs 12, 1 ,2 
+                    ta1.comparar(); 
                     break;
                 case 6:
                     repetir = false;

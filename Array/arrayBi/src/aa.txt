@@ -1,0 +1,6 @@
+constructor hjijo 
+
+public hijo(string atriPadre , string atriHijo){
+    super(atributo padre)
+    this.atributo hijo = atributo hijo ; 
+}   
