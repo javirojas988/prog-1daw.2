@@ -6,6 +6,9 @@ public class Libro extends Obra {
         this.editorial = editorial ; 
     }
 
-    
+    @Override
+    public String toString() {
+        return super.toString()+ "\neditorial: "+editorial;
+    }
     
 }
