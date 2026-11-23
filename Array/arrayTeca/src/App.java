@@ -22,14 +22,19 @@ public class App {
         } while (repetir);
         return  respuesta;
     }
+
+    public static int CONTADOR_DE_DIAS = 1 ;
+
     public static void main(String[] args) throws Exception {
         boolean repetir = true ; 
         int opcion ; 
+        Prestamo gPrestamo = new Prestamo();
         GestionUsuarios gUsuarios = new GestionUsuarios();
         GestionaObras g1 = new GestionaObras();
         System.out.println("Hola, simulador de teca con dias. Tenemos 100 obras jojojo");
         do {
             System.out.println(" - - - - - - - - - - - - - - - - - - - - - - - -  ");
+            System.out.println("DIA "+CONTADOR_DE_DIAS);
             System.out.println("1. Dar de alta obra \n2. Obras prestada.");
             System.out.println("3. Dar de alta socios\n4. Baja socio\n5. Localiza socio ");
             System.out.println("6. Realizar prestamo");
@@ -68,10 +73,27 @@ public class App {
                     gUsuarios.buscar(apedillo);
                     break;
                 case 6:
-                    //prestamos 
+                    //Mostramo la obra dispo 
+                    //Decimos usuarios.s
+                    gUsuarios.printearSocio();
+                    opcion = lecturaSegura("Elija un socio: ");
+                    int auxiliar = opcion; 
+                    if (gUsuarios.getSocio(opcion) != null ){
+
+                        if ( gPrestamo.puedeRecibirPrestamo( gUsuarios.getSocio(opcion) ) ){
+                            
+                            opcion = lecturaSegura("Elije tipo de obra 1, 2, 3: ");
+                            //METODO QUE DEVUELVA OBRAS DISPO POR EL TIPO DE OBRA
+                            gPrestamo.realizarPrestamo(gUsuarios.getSocio(auxiliar), null);
+                            
+                        } 
+                    }
+                    
+                    
                     break;
                 case 7:
-                    //pasar dia pa las pruebas ns sssssss
+                    System.out.println("dando la vuelta al mundo...  | /  | /");
+                    CONTADOR_DE_DIAS++;
                     break;
                 case 8 :
                     repetir = false ; 

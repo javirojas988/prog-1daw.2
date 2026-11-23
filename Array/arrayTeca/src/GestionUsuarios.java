@@ -56,4 +56,10 @@ public class GestionUsuarios {
             }
         }
     }
+
+    public Socio getSocio(int opcion){
+        if (listaSocios[opcion-1] != null){
+            return listaSocios[opcion-1];
+        }else return null;
+    }
 }

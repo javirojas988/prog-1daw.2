@@ -1,14 +1,17 @@
 public class Socio {
+    
     private String nombre ; 
     private String apellido; 
-    private int numObras ;
+    private boolean sancionado = false ;
     private int prestamosActuales = 0 ; 
     
     
     public String getNombre() {
         return nombre;
     }
-    
+    public boolean isSancionado() {
+        return sancionado;
+    }
     public Socio(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -17,21 +20,17 @@ public class Socio {
     public String getApellido() {
         return apellido;
     }
-    
-    public int getNumObras() {
-        return numObras;
+    public void setSancionado(boolean sancionado) {
+        this.sancionado = sancionado;
     }
-    public void setNumObras(int numObras) {
-        this.numObras = numObras;
-    
-    } 
+   
     public int getPrestamosActuales() {
         return prestamosActuales;
     }
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return nombre + " " + apellido + " ";
+        return  nombre + " " + apellido + " ";
     }
 }
 
