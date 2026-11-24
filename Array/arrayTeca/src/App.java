@@ -94,6 +94,9 @@ public class App {
                 case 7:
                     System.out.println("dando la vuelta al mundo...  | /  | /");
                     CONTADOR_DE_DIAS++;
+                    gPrestamo.revisarFecha();
+                    gUsuarios.reducirPena();
+                    // funcion revisar los sancionados y reducir su pena
                     break;
                 case 8 :
                     repetir = false ; 

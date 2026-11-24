@@ -62,4 +62,13 @@ public class GestionUsuarios {
             return listaSocios[opcion-1];
         }else return null;
     }
+
+    // pasa cada nuevo dia, coge los sancionado y les reduce la pena
+    public void reducirPena(){
+        for (int i = 0; i < listaSocios.length; i++) {
+            if ( listaSocios[i] != null && listaSocios[i].isSancionado()){
+                listaSocios[i].setSancion(listaSocios[i].getSancion()-1);
+            }
+        }
+    }
 }
