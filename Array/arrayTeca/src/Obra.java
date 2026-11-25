@@ -12,14 +12,20 @@ public class Obra {
     this.autor = autor;
    }
 
-   
-
+   public void setPrestada(boolean prestada) {
+       this.prestada = prestada;
+   }
+   public void setCod(String cod) {
+       this.cod = cod;
+   }
    public boolean isPrestada() {
       return prestada;
    } 
-   
+   public String getCod() {
+       return cod;
+   }
    @Override
    public String toString() {
-      return ("Titulo: "+ titulo+ "\nautor: "+ autor);
+      return ("Cod: "+ cod +"\nTitulo: "+ titulo+ "\nAutor: "+ autor);
    }
 }

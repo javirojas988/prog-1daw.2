@@ -28,9 +28,17 @@ public class App {
     public static void main(String[] args) throws Exception {
         boolean repetir = true ; 
         int opcion ; 
+        
         Prestamo gPrestamo = new Prestamo();
+        Reserva gReserva = new Reserva();
+        
         GestionUsuarios gUsuarios = new GestionUsuarios();
         GestionaObras g1 = new GestionaObras();
+
+        Socio socio = new Socio("javier", "vergal");
+        Libro libro = new Libro("Lioko", "las tempestalidad", "McTominay", "Anaya canaya");
+        g1.godModeAniadir(libro, 1);
+        
         System.out.println("Hola, simulador de teca con dias. Tenemos 100 obras jojojo");
         do {
             System.out.println(" - - - - - - - - - - - - - - - - - - - - - - - -  ");
@@ -67,24 +75,30 @@ public class App {
                     
                     break;
                 case 5:
-
-                    System.out.println("introduce el apedillo: ");
+                    sc.nextLine();
+                    System.out.print("introduce el apedillo: ");
                     String apedillo = sc.nextLine();
                     gUsuarios.buscar(apedillo);
                     break;
                 case 6:
+
                     //Mostramo la obra dispo 
-                    //Decimos usuarios.s
+
+                    //Decimos usuarios
                     gUsuarios.printearSocio();
                     opcion = lecturaSegura("Elija un socio: ");
                     int auxiliar = opcion; 
                     if (gUsuarios.getSocio(opcion) != null ){
 
                         if ( gPrestamo.puedeRecibirPrestamo( gUsuarios.getSocio(opcion) ) ){
-                            
+                            sc.nextLine();
+                            System.out.println("libro, dvd, vinilo");
                             opcion = lecturaSegura("Elije tipo de obra 1, 2, 3: ");
-                            //METODO QUE DEVUELVA OBRAS DISPO POR EL TIPO DE OBRA
-                            gPrestamo.realizarPrestamo(gUsuarios.getSocio(auxiliar), null);
+                            g1.enseniarPorTipo(opcion);
+                            
+                            opcion = lecturaSegura("elija uno por su código: ");
+                            Obra obra = g1.devolveObra(auxiliar);
+                            gPrestamo.realizarPrestamo(gUsuarios.getSocio(auxiliar),obra );
                             
                         } 
                     }
@@ -96,7 +110,8 @@ public class App {
                     CONTADOR_DE_DIAS++;
                     gPrestamo.revisarFecha();
                     gUsuarios.reducirPena();
-                    // funcion revisar los sancionados y reducir su pena
+                    gReserva.chequearReservas(gPrestamo);
+
                     break;
                 case 8 :
                     repetir = false ; 

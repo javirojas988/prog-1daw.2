@@ -7,16 +7,17 @@ public class Prestamo {
     // no se si deberia ir aqui el array
     private static Prestamo liPrestamos[] = new Prestamo [GestionUsuarios.MAXIMO_SOCIOS*MAXIMO_OBRAS];
 
-    public void calcularLimite(){
+    public int calcularLimite(){
         fechaLimite = fechaPrestamo + 15 ; 
-        
+        return fechaLimite ;
     }
     
     // mostamo 
-    public Prestamo(Obra obra, Socio socio, int fechaPrestamo) {
+    public Prestamo(Obra obra, Socio socio, int fechaPrestamo, int fechaLimite) {
         this.obra = obra;
         this.socio = socio;
         this.fechaPrestamo = fechaPrestamo;
+        this.fechaLimite = fechaPrestamo;
     }
     public Prestamo() {
         //TODO Auto-generated constructor stub
@@ -26,7 +27,7 @@ public class Prestamo {
         if ( obra.isPrestada()){
             //Reserva
         } else {
-            Prestamo prestamo = new Prestamo(obra, socio,App.CONTADOR_DE_DIAS );
+            Prestamo prestamo = new Prestamo(obra, socio,App.CONTADOR_DE_DIAS, calcularLimite() );
             for (int i = 0; i < liPrestamos.length; i++) {
                 if ( liPrestamos[i] == null){
                     liPrestamos[i] = prestamo ; 
@@ -34,7 +35,7 @@ public class Prestamo {
                 }
             }
         }
-         // ELSE ; INSTANCIA PRESTAMO Y LO AÑADE AL ARRAY  ;
+        
     }
 
     public boolean puedeRecibirPrestamo( Socio socio ){
@@ -53,8 +54,9 @@ public class Prestamo {
     // como esta funcion pasa cada dia, se le ira sumando tres cada dia 
     // cuando entregue debera quitarse el prestamo y esto deberia parar por ende
     public void revisarFecha(){
+
         for (int i = 0; i < liPrestamos.length; i++) {
-            if (liPrestamos != null && liPrestamos[i].fechaLimite < App.CONTADOR_DE_DIAS){
+            if (liPrestamos[i] != null && liPrestamos[i].fechaLimite < App.CONTADOR_DE_DIAS){
                 Socio socio = liPrestamos[i].getSocio();
                 socio.setSancionado(true);
                 socio.setSancion(socio.getSancion()+3);

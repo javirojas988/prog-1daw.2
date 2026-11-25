@@ -12,7 +12,7 @@ public class GestionUsuarios {
             String apellido = App.sc.nextLine();
             Socio socio = new Socio(nombre, apellido);
             for (int i = 0; i < MAXIMO_SOCIOS; i++) {
-                if (listaSocios[i] != null) {
+                if (listaSocios[i] == null) {
                     listaSocios[i] = socio;
                     i = MAXIMO_SOCIOS;
                 }
@@ -36,6 +36,7 @@ public class GestionUsuarios {
 
     }
 
+
     public void printearSocio(){
         for (int i = 0; i < MAXIMO_SOCIOS; i++) {
             if( listaSocios[i] != null){
@@ -48,12 +49,13 @@ public class GestionUsuarios {
     public void buscar(String apedillo){
         int contador = 0 ; 
         for (int i = 0; i < listaSocios.length; i++) {
-            if (listaSocios[i]!= null && listaSocios[i].getApellido() == apedillo) {
+
+            if (listaSocios[i]!= null && listaSocios[i].getApellido().equals(apedillo)) {
                 contador++;
                 System.out.println( contador + " * * * * *");
-               System.out.println(listaSocios[i].toString());
-               
+                System.out.println(listaSocios[i].toString());
             }
+
         }
     }
 
@@ -63,6 +65,7 @@ public class GestionUsuarios {
         }else return null;
     }
 
+    // como es god mode y lo añado a mano no hace falta que gestione el tipoObra
     // pasa cada nuevo dia, coge los sancionado y les reduce la pena
     public void reducirPena(){
         for (int i = 0; i < listaSocios.length; i++) {
@@ -71,4 +74,6 @@ public class GestionUsuarios {
             }
         }
     }
+
+
 }
